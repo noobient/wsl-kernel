@@ -1,3 +1,7 @@
 #!/bin/bash
 
-docker build -t noobuntu/wsl-kernel .
+export ROOT="${BASH_SOURCE%/*}"
+source "${ROOT}/common.sh"
+
+export exec=$(find_exec)
+"${exec}" build -t noobuntu/wsl-kernel .
